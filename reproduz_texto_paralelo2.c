@@ -28,7 +28,7 @@ void *t_function (void *arg) {
 
         // Última thread
         if (*rank == (NUM_THREADS-1)) {
-            printf("Última thread...\n");
+            printf("Última thread...\n");                       // last thread
             for (j = (NUM_THREADS-1)*intervalo; j < tamanho; j++) {
                 for (k = 0; k < 255; k++) {
                     chute[j] = k;
