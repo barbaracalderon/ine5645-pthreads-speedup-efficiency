@@ -79,4 +79,22 @@ int main (int argc, char *argv[]) {
 
     tamanho = tam;
     intervalo =  tam/NUM_THREADS;
+
+
+    // ABERTURA DAS THREADS
+    printf("==> NUM_THREADS: %d.\n", NUM_THREADS);
+    for (i = 0; i < NUM_THREADS; i++) {
+        ids[i] = malloc(sizeof(long));
+        *ids[i] = i;
+        pthread_create(&t[i], NULL, t_function, (void*)ids[i]);  // último NULL argumento
+    };
     
+    // FECHAMENTO DAS THREADS
+    for (i = 0; i < NUM_THREADS; i++) {
+        pthread_join(t[i], NULL);
+    };
+    printf("==> Todas as threads acabaram.\n");
+    exit(EXIT_SUCCESS);
+    
+    return 0;
+};
