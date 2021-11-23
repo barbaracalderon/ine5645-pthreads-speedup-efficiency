@@ -58,3 +58,25 @@ void *t_function (void *arg) {
     printf("-- Thread %ld terminou\n", *rank);
     pthread_exit(NULL);
 }
+
+
+int main (int argc, char *argv[]) {
+    pthread_t t[NUM_THREADS];
+    unsigned long tam;
+    long *ids[NUM_THREADS];
+    long i;
+
+    if (argc != 2) {
+    printf("Favor informar o tamanho da palavra. Por exemplo:\n");
+    printf("./reproduz_texto_paralelo 100\n");
+    return 0;
+    }
+
+    sscanf(argv[1], "%lu", &tam);
+    texto = malloc(sizeof(char)*tam);
+    chute = malloc(sizeof(char)*tam);
+    cria_palavra_secreta(texto, tam);
+
+    tamanho = tam;
+    intervalo =  tam/NUM_THREADS;
+    
