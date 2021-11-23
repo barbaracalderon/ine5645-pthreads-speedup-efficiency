@@ -4,12 +4,13 @@
 #include <time.h>
 #include <math.h>
 #include <stdlib.h>
-#define NUM_THREADS 32
+#define NUM_THREADS 32      // Change this to as many as you want
 
-char *texto;
-char *chute;
-int tamanho;
-int intervalo;
+char *texto;                // text
+char *chute;                // guess
+int tamanho;                // size
+int intervalo;              // gap
+                            // palavra = word
 
 int cria_palavra_secreta (char *palavra, int tam) {
     srand((unsigned) time(NULL));
@@ -23,7 +24,7 @@ void *t_function (void *arg) {
     long *rank;
     rank = (long *)arg;
 
-    printf("-- Thread %ld começou", *rank);
+    printf("-- Thread %ld começou", *rank);                 // thread %ld started
     printf("\n");
 
         // Última thread
@@ -55,7 +56,7 @@ void *t_function (void *arg) {
             };
         };
     
-    printf("-- Thread %ld terminou\n", *rank);
+    printf("-- Thread %ld terminou\n", *rank);          // thread %ld finished
     pthread_exit(NULL);
 }
 
@@ -67,7 +68,7 @@ int main (int argc, char *argv[]) {
     long i;
 
     if (argc != 2) {
-    printf("Favor informar o tamanho da palavra. Por exemplo:\n");
+    printf("Favor informar o tamanho da palavra. Por exemplo:\n");      // Please type the size of the word. Example: \n
     printf("./reproduz_texto_paralelo 100\n");
     return 0;
     }
@@ -80,8 +81,7 @@ int main (int argc, char *argv[]) {
     tamanho = tam;
     intervalo =  tam/NUM_THREADS;
 
-
-    // ABERTURA DAS THREADS
+    // ABERTURA DAS THREADS     (OPENING THREADS)
     printf("==> NUM_THREADS: %d.\n", NUM_THREADS);
     for (i = 0; i < NUM_THREADS; i++) {
         ids[i] = malloc(sizeof(long));
@@ -89,7 +89,7 @@ int main (int argc, char *argv[]) {
         pthread_create(&t[i], NULL, t_function, (void*)ids[i]);  // último NULL argumento
     };
     
-    // FECHAMENTO DAS THREADS
+    // FECHAMENTO DAS THREADS       (CLOSING THREADS)
     for (i = 0; i < NUM_THREADS; i++) {
         pthread_join(t[i], NULL);
     };
