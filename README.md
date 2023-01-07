@@ -1,4 +1,14 @@
-# PT: pthreads-speedup-eficiência
+# INE5645 - PROGRAMAÇÃO PARALELA E DISTRIBUIDA (UFSC)
+
+## pthreads-speedup-efficiency
+
+Este repositório foi criado para solucionar, em linguagem C e individualmente, um problema proposto na disciplina de Programação Paralela e Distribuída, que faz parte do currículo da graduação de Bacharelado em Sistemas de Informação pela Universidade Federal de Santa Catarina (UFSC). 
+
+## Conteúdos
+
+Neste repositório você encontra o software simples, implementado em linguagem C, para observar o paralelismo de threads e seus desempenhos. Este código serviu de substância para a geração de tabela de dados e gráficos que compôs o relatório final para esta atividade. 
+
+## Na prática
 
 Esse é um programa para estimar o 'speedup' e a 'eficiência' das threads trabalhando em cima de uma mesma palavra. Isso é feito ao medir o tempo de execução do programa e aplicando matemática para chegar nas medidas mencionadas.
 
@@ -21,8 +31,17 @@ Boa sorte.
 
 B.
 
+# EN: INE5645 - PROGRAMAÇÃO PARALELA E DISTRIBUIDA (UFSC)
 
-# EN: pthreads-speedup-efficiency
+## pthreads-speedup-efficiency
+
+This repository was created to solve, in C language and individually, a problem proposed in the discipline of Parallel and Distributed Programming, which is part of the undergraduate curriculum of Bachelor of Information Systems at the Federal University of Santa Catarina (UFSC).
+
+## Contents
+
+In this repository you will find simple software, implemented in C language, to observe the parallelism of threads and their performance. This code served as substance for the generation of the data table and graphs that composed the final report for this activity.
+
+## In practice
 
 This is a program to estimate the 'speedup' and 'efficiency' of threads working on the same word. This is done by measuring the execution time and applying the math to get both data.
 
@@ -44,4 +63,3 @@ You will create a time table for that word size running with different number of
 Good luck.
 
 B.
-
